@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class DepositCalculator {
-    double calculateComplexPercent(double firstVal, double secondVal, int thirdVal) {
+    double calculateComplexPercent(double firstVal, double secondVal, int thirdVal) { // тут бы я поменя имена по аналогии с calculateSimplePercent
         double pay = firstVal * Math.pow((1 + secondVal / 12), 12 * thirdVal);
         return round(pay, 2);
     }
@@ -15,7 +15,7 @@ public class DepositCalculator {
         return Math.round(value * scale) / scale;
     }
 
-    void doImportantJob() {
+    void doImportantJob() { // тут тоже бы сменил название метода
         int period, action;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сумму вклада в рублях:");
@@ -31,7 +31,7 @@ public class DepositCalculator {
         else if (action == 2) {
             outVar = calculateComplexPercent(amount, 0.06, period);
         }
-        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + outDoubleVar);
+        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + outDoubleVar); // выше outVar. Код работает вообще? )
     }
 
     public static void main(String[] args) {
