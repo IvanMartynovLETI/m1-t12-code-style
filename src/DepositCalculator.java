@@ -15,8 +15,9 @@ public class DepositCalculator {
         return Math.round(value * scale) / scale;
     }
 
-    void doImportantJob() {
-        int period, action;
+    void createDeposit() {
+        int period;
+        int action;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сумму вклада в рублях:");
         int amount = scanner.nextInt();
@@ -27,14 +28,14 @@ public class DepositCalculator {
         double result = 0;
 
         if (action == 1)
-            outVar = calculateSimplePercent(amount, 0.06, period);
+            result = calculateSimplePercent(amount, 0.06, period);
         else if (action == 2) {
-            outVar = calculateComplexPercent(amount, 0.06, period);
+            result = calculateComplexPercent(amount, 0.06, period);
         }
         System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + result);
     }
 
     public static void main(String[] args) {
-        new DepositCalculator().doImportantJob();
+        new DepositCalculator().createDeposit();
     }
 }
